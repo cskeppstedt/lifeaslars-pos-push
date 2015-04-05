@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Life as Lars - position push</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        body {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #map {
+            height: 240px;
+        }
+
+        .published {
+            color: #81c784;
+        }
+
+        .published--fail {
+            color: #ef9a9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <button id="btnStartWatch" class="btn">
+                Get location<i class="mdi-communication-location-on right"></i>
+            </button>
+            <button id="btnStopWatch" class="btn hide">
+                Watching location...<i class="mdi-communication-location-off right"></i>
+            </button>
+        </div>
+
+        <div class="row">
+            <div id="map"></div>
+        </div>
+
+        <div class="row hide" id="loader">
+            <div class="progress"><div class="indeterminate"></div></div>
+        </div>
+
+        <div class="row">
+            <div id="position"></div>
+        </div>
+
+        <div id="published" class="row published hide">
+            <i class="mdi-file-cloud-upload published__icon large"></i>
+            <div id="published__error" class="hide"></div>
+        </div>
+
+        <div id="publish" class="row hide">
+            <button id="btnPublish" class="btn">
+                Publish this location<i class="mdi-content-send right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="push.js"></script>
+</body>
+</html>
